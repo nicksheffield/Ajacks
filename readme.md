@@ -10,7 +10,7 @@ Inside that response is a set of instructions on what the client-side is suppose
 
 For example: adding an item to a list.
 
-First we teach the script that if it gets a response with the \'addItem\' action, this is what to do with it.
+First we teach the script that if it gets a response with the *addItem* action, this is what to do with it.
 
 **script.js**
 ```javascript
