@@ -9,7 +9,7 @@ Inside that response is a set of instructions on what the client-side is suppose
 
 For example: adding an item to a list.
 
-First we teach the script what to do if it gets a response with the *addItem* action, and that when we click an `a.add-item` element, we want to elicit that response.
+First we teach the script what to do if it gets a response with the `addItem` action, and that when we click an `a.add-item` element, we want to elicit that response.
 
 **script.js**
 ```javascript
@@ -31,5 +31,5 @@ Then we define the data involved with the addItem response in the php, and conve
 	);
 ```
 
-The *content* and *target* parameters used in this example are optional. Only *action* is required.
-However, the *content* and *target* parameters are being used to describe information that the javascript will use.
+The `content` and `target` parameters used in this example are optional. Only `action` is required.
+However, the `content` and `target` parameters are being used to describe information that the javascript will use.
