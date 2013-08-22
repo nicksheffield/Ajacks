@@ -1,16 +1,15 @@
 #jQuery Ajaxify Plugin
+-----
 
----
-
-A jQuery plugin for easily handling AJAX requests and responses.
+Ajaxify is a jQuery plugin for easily handling AJAX requests and responses.
 
 It works by creating a centralised ajax call which expects a specially constructed JSON response.
 
-Inside that response is a set of instructions on what the client-side is supposed to do.
+Inside that response is a set of instructions on what the client-side is supposed to do when it receives it.
 
 For example: adding an item to a list.
 
-First we teach the script that if it gets a response with the *addItem* action, this is what to do with it.
+First we teach the script what to do if it gets a response with the *addItem* action, and that when we click an `a.add-item` element, we want to elicit that response.
 
 **script.js**
 ```javascript
