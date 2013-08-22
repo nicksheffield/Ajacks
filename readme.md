@@ -2,17 +2,17 @@
 
 ---
 
-A jQuery plugin for easily handling AJAX calls and callbacks.
+A jQuery plugin for easily handling AJAX requests and responses.
 
-It works by creating a centralised ajax call which expects a json response.
+It works by creating a centralised ajax call which expects a specially constructed JSON response.
 
 Inside that response is a set of instructions on what the client-side is supposed to do.
 
 For example: adding an item to a list.
 
-First we teach the script that if it gets a response with the 'addItem' response, this is what to do with it.
+First we teach the script that if it gets a response with the \'addItem\' action, this is what to do with it.
 
-**script.j**
+**script.js**
 ```javascript
 	$.addAction('addItem', function(response){
 		$(response.target).append(response.content);
