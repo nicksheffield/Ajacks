@@ -3,7 +3,7 @@
 
 
 jQuery.extend({
-	ajaxify_actions: {
+	jaxor_actions: {
 		append: function(response, element){
 			// if there is a target in the response, use that instead of the supplied element
 			if(response.target) element = response.target;
@@ -41,12 +41,8 @@ jQuery.extend({
 		}
 	},
 
-	registerAction: function(name, callback){
-		$.ajaxify_actions[name] = callback;
-	},
-
-	addAction: function(name, callback){
-		$.registerAction(name, callback);
+	jaxorAction: function(name, callback){
+		$.jaxor_actions[name] = callback;
 	}
 });
 
@@ -58,13 +54,13 @@ jQuery.fn.extend({
 	/*
 		eg.
 
-		$('form').ajaxify('submit', 'action.php', {
+		$('form').jaxor('submit', 'action.php', {
 			id: 1,
 			content: 'Hello World'
 		});
 
 	*/
-	ajaxify: function(event, url, data){
+	jaxor: function(event, url, data){
 
 		$('body').on(event, this.selector, function(){
 
@@ -104,7 +100,7 @@ jQuery.fn.extend({
 
 				// if no url was found, then error
 				else{
-					console.error('No url detected for ajaxify');
+					console.error('No url detected for jaxor');
 					return false;
 				}
 			}
@@ -127,14 +123,14 @@ jQuery.fn.extend({
 					console.log(response);
 
 					// loop through each action we know about
-					for(action in $.ajaxify_actions){
+					for(action in $.jaxor_actions){
 
 						// if the current action in the loop is the same one as in the response
 						if(action == response.action)
 							// then select that action, from the array of all the actions we know about
 							// then run that action as a function
 							// and give it the response object so it knows the response information
-							$.ajaxify_actions[action](response, el);
+							$.jaxor_actions[action](response, el);
 					}
 
 				}

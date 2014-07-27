@@ -1,7 +1,7 @@
-#jQuery Ajaxify Plugin
+#jQuery Jaxor Plugin
 -----
 
-Ajaxify is a jQuery plugin for easily handling AJAX requests and responses.
+Jaxor is a jQuery plugin for easily handling AJAX requests and responses.
 
 It works by creating a centralised ajax call which expects a specially constructed JSON response.
 
@@ -13,11 +13,11 @@ First we teach the script what to do if it gets a response with the `addItem` ac
 
 **script.js**
 ```javascript
-	$.addAction('addItem', function(response){
+	$.jaxorAction('addItem', function(response){
 		$(response.target).append(response.content);
 	})
 
-	$('a.add-item').ajaxify('click', 'add_item.php');
+	$('a.add-item').jaxor('click', 'add_item.php');
 ```
 
 Then we define the data involved with the addItem response in the php, and convert that to json.

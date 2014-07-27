@@ -21,7 +21,7 @@
 </head>
 <body>
 	<header>
-		<h1>Ajaxify Test</h1>
+		<h1>Jaxor Test</h1>
 	</header>
 	
 	<nav>
@@ -38,22 +38,22 @@
 	<article id="content">Content goes here</article>
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="jquery.ajaxify-1.0.js"></script>
+	<script src="jquery.jaxor-1.0.js"></script>
 	<script>
 		$(function(){
 
-			// teach my page how to handle a getTime ajaxify action
-			$.addAction('getTime', function(response){
+			// teach my page how to handle a getTime jaxor action
+			$.jaxorAction('getTime', function(response){
 				$('#time').text(response.content);
 			});
 
-			// teach my page how to handle a getContent ajaxify action
-			$.addAction('getContent', function(response){
+			// teach my page how to handle a getContent jaxor action
+			$.jaxorAction('getContent', function(response){
 				$('#content').html(response.content);
 			});
 
-			// Tell the 'nav a' tags to run an "ajaxified" ajax call on the click event
-			$('nav a').ajaxify('click');
+			// Tell the 'nav a' tags to run a "jaxor" ajax call on the click event
+			$('nav a').jaxor('click');
 
 		});
 	</script>
