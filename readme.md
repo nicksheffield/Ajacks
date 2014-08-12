@@ -1,7 +1,7 @@
-#jQuery Jaxor Plugin
+#jQuery Ajacks Plugin
 -----
 
-Jaxor is a jQuery plugin for easily handling AJAX requests and responses.
+Ajacks is a jQuery plugin for easily handling AJAX requests and responses.
 
 It works by creating a centralised ajax call which expects a specially constructed JSON response.
 
@@ -13,11 +13,11 @@ First we teach the script what to do if it gets a response with the `addItem` ac
 
 **script.js**
 ```javascript
-	$.jaxorAction('addItem', function(response){
+	$.ajacksAction('addItem', function(response){
 		$(response.target).append(response.content);
 	})
 
-	$('a.add-item').jaxor('click', 'add_item.php');
+	$('a.add-item').ajacks('click', 'add_item.php');
 ```
 
 Then we define the data involved with the addItem response in the php, and convert that to json.

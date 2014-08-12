@@ -1,9 +1,5 @@
-
-
-
-
 jQuery.extend({
-	jaxor_actions: {
+	ajacks_actions: {
 		append: function(response, element){
 			// if there is a target in the response, use that instead of the supplied element
 			if(response.target) element = response.target;
@@ -41,8 +37,8 @@ jQuery.extend({
 		}
 	},
 
-	jaxorAction: function(name, callback){
-		$.jaxor_actions[name] = callback;
+	ajacksAction: function(name, callback){
+		$.ajacks_actions[name] = callback;
 	}
 });
 
@@ -54,13 +50,13 @@ jQuery.fn.extend({
 	/*
 		eg.
 
-		$('form').jaxor('submit', 'action.php', {
+		$('form').ajacks('submit', 'action.php', {
 			id: 1,
 			content: 'Hello World'
 		});
 
 	*/
-	jaxor: function(event, url, data){
+	ajacks: function(event, url, data){
 
 		$('body').on(event, this.selector, function(){
 
@@ -100,7 +96,7 @@ jQuery.fn.extend({
 
 				// if no url was found, then error
 				else{
-					console.error('No url detected for jaxor');
+					console.error('No url detected for ajacks');
 					return false;
 				}
 			}
@@ -123,14 +119,14 @@ jQuery.fn.extend({
 					console.log(response);
 
 					// loop through each action we know about
-					for(action in $.jaxor_actions){
+					for(action in $.ajacks_actions){
 
 						// if the current action in the loop is the same one as in the response
 						if(action == response.action)
 							// then select that action, from the array of all the actions we know about
 							// then run that action as a function
 							// and give it the response object so it knows the response information
-							$.jaxor_actions[action](response, el);
+							$.ajacks_actions[action](response, el);
 					}
 
 				}
